@@ -5,8 +5,11 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Time is Money",
     short_name: "Time",
     description: "Track work hours across devices and bill them at month end.",
+    id: "/",
     start_url: "/",
+    scope: "/",
     display: "standalone",
+    orientation: "portrait",
     background_color: "#f6f7f5",
     theme_color: "#0f7b5f",
     icons: [

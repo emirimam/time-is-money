@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useApp } from "@/components/AppProvider";
 import { inviteUser } from "./actions";
+import { openInstallPrompt } from "@/components/InstallPrompt";
 import type { Lookup, Profile, RoundingMode, Role, Settings } from "@/lib/types";
 
 const TIMEZONES = ["Europe/Sarajevo", "Europe/London", "America/New_York", "America/Chicago", "America/Denver", "America/Los_Angeles", "UTC"];
@@ -105,9 +106,14 @@ function Account() {
           <Status msg={msg} />
         </div>
       </form>
-      <form action="/auth/signout" method="post" className="mt-4 border-t border-border pt-4">
-        <button className="btn-secondary">Sign out</button>
-      </form>
+      <div className="mt-4 flex flex-wrap gap-2 border-t border-border pt-4">
+        <button type="button" className="btn-secondary" onClick={openInstallPrompt}>
+          Install app
+        </button>
+        <form action="/auth/signout" method="post">
+          <button className="btn-secondary">Sign out</button>
+        </form>
+      </div>
     </Section>
   );
 }
