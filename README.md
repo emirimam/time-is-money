@@ -25,8 +25,8 @@ Stack: Next.js 16 (App Router) · Supabase (Postgres, Auth, Realtime, RLS) · Ta
 2. **SQL Editor** → run the files in [`supabase/migrations`](supabase/migrations) in order.
 3. **Authentication → Sign In / Providers → Email**: turn **off** "Allow new users to sign up" (people join by invitation only).
 4. **Authentication → URL Configuration**
-   - *Site URL*: your production URL, e.g. `https://time-is-money.vercel.app`
-   - *Redirect URLs*: add `https://time-is-money.vercel.app/**` and `http://localhost:3000/**`
+   - *Site URL*: your production URL, e.g. `https://time-is-money-sigma.vercel.app`
+   - *Redirect URLs*: add `https://time-is-money-sigma.vercel.app/**` and `http://localhost:3000/**`
 5. **Authentication → Email Templates** (recommended, makes login work inside the installed phone app):
    - **Magic Link** — add the code so people can type it into the app:
      ```html
