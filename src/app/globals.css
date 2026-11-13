@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+:root {
+  --background: #f6f7f5;
+  --surface: #ffffff;
+  --foreground: #16181a;
+  --muted: #6b7175;
+  --border: #e3e6e3;
+  --accent: #0f7b5f;
+  --accent-soft: #e3f3ed;
+  --danger: #c2412d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0e1011;
+    --surface: #171a1c;
+    --foreground: #eceeed;
+    --muted: #9aa1a5;
+    --border: #2a2f32;
+    --accent: #34c39a;
+    --accent-soft: #15302a;
+    --danger: #f07a66;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility input {
+  @apply w-full rounded-lg border border-border bg-surface px-3 py-2.5 text-base outline-none focus:border-accent focus:ring-2 focus:ring-accent/25 disabled:opacity-60;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+}
+@utility btn-primary {
+  @apply btn bg-accent text-white dark:text-black hover:brightness-110;
+}
+@utility btn-secondary {
+  @apply btn border border-border bg-surface hover:bg-background;
+}
+@utility btn-danger {
+  @apply btn border border-danger/40 text-danger hover:bg-danger/10;
+}
+@utility card {
+  @apply rounded-xl border border-border bg-surface;
+}
+@utility label {
+  @apply mb-1 block text-xs font-medium uppercase tracking-wide text-muted;
+}
