@@ -22,7 +22,7 @@ Stack: Next.js 16 (App Router) · Supabase (Postgres, Auth, Realtime, RLS) · Ta
 ### 1. Supabase
 
 1. Create a project at [supabase.com](https://supabase.com).
-2. **SQL Editor** → paste and run [`supabase/migrations/0001_init.sql`](supabase/migrations/0001_init.sql).
+2. **SQL Editor** → run the files in [`supabase/migrations`](supabase/migrations) in order.
 3. **Authentication → Sign In / Providers → Email**: turn **off** "Allow new users to sign up" (people join by invitation only).
 4. **Authentication → URL Configuration**
    - *Site URL*: your production URL, e.g. `https://time-is-money.vercel.app`
